@@ -1,4 +1,4 @@
-import "./styles.css";
+import '../styles/main.css'
 import { createSnake } from "./snake";
 import { clearCanvas } from "./util/canvasUtils";
 import * as Controls from "./controller/controls";
