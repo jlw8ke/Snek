@@ -1,5 +1,4 @@
-import { getRandomTens } from '../util/util'
-import { darkenColor } from '../util/colorUtils'
+import { getRandomTens, darkenColor } from '../util/util'
 import { CELL_SIZE, RED } from '../constants'
 
 class Food {

@@ -1,5 +1,5 @@
 import { GREEN, CELL_SIZE } from '../constants'
-import { darkenColor } from '../util/colorUtils'
+import { darkenColor } from '../util/util'
 
 export class Snake {
   constructor({ color = GREEN, x, y, length = 5 } = {}) {
@@ -19,7 +19,7 @@ export class Snake {
     })
   }
 
-  move() {
+  move(hasEatenFood = false) {
     if (this.movement.dx === 0 && this.movement.dy === 0) {
       return
     }
@@ -31,7 +31,9 @@ export class Snake {
     }
 
     this.snakeParts.unshift(newHead)
-    this.snakeParts.pop()
+    if (!hasEatenFood) {
+      this.snakeParts.pop()
+    }
   }
 
   changeDirection(direction) {
