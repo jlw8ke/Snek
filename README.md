@@ -1,2 +1,0 @@
-# Snek
-Created with CodeSandbox
