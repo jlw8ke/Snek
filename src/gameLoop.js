@@ -2,7 +2,7 @@ import config from './config.json'
 
 const DELAY = 1000 / config.FPS
 
-export const createGameLoop = (canvas, { update, draw }) => {
+export const createGameLoop = (canvas, { update, draw, end }) => {
   let lastRender
   let lastProgress = -1
 
@@ -12,6 +12,8 @@ export const createGameLoop = (canvas, { update, draw }) => {
   }
 
   function loop(timestamp) {
+    if (end()) return
+
     if (!lastRender) {
       lastRender = timestamp
     }

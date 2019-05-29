@@ -16,6 +16,7 @@ const gameLoop = createGameLoop(canvas, {
   draw: () => {
     clearCanvas(canvas)
     game.draw()
-  }
+  },
+  end: () => game.gameOver
 })
 gameLoop.start()

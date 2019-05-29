@@ -1,7 +1,7 @@
 import { Snake } from './snake'
 import { getDirection } from './controls'
 import { createFood } from './food'
-import { CELL_SIZE } from '../constants'
+import { CELL_SIZE, GREY } from '../constants'
 
 export class Game {
   constructor(canvas) {
@@ -28,6 +28,16 @@ export class Game {
     const direction = this.inputQueue.shift()
     this.snake.changeDirection(direction)
     this.snake.move()
+
+    if (
+      this.snake.isDead(
+        this.canvas.width - CELL_SIZE,
+        this.canvas.height - CELL_SIZE
+      )
+    ) {
+      this.gameOver = true
+      this.snake.color = GREY
+    }
   }
 
   draw() {

@@ -75,6 +75,19 @@ export class Snake {
       this.currentDirection = direction
     }
   }
+
+  isDead(maxX, maxY) {
+    const head = this.snakeParts[0]
+    const isOutOfBounds =
+      head.x < 0 || head.x > maxX || head.y < 0 || head.y > maxY
+
+    return (
+      isOutOfBounds ||
+      this.snakeParts.some(
+        part => part !== head && part.x === head.x && part.y === head.y
+      )
+    )
+  }
 }
 
 const generateStartingPosition = ({ x, y, length }) => {
