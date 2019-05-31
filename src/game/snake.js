@@ -82,7 +82,6 @@ export class Snake {
     const head = this.snakeParts[0]
     const isOutOfBounds =
       head.x < 0 || head.x > maxX || head.y < 0 || head.y > maxY
-
     return (
       isOutOfBounds ||
       this.snakeParts.some(
