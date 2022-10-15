@@ -2,7 +2,6 @@
   "name": "snek-finished",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
@@ -10,7 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.7.0",
     "prettier": "^1.19.1"
   },
   "keywords": []
